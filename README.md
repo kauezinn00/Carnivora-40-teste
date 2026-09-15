@@ -9,7 +9,7 @@ Versão de teste separada do funil atual. O projeto continua estático, mobile-f
 - Ingredientes e proteínas unidos em uma única etapa.
 - Barra de progresso simples mantida como único indicador global de avanço; os cards de fase foram removidos para não reforçar a sensação de quiz longo.
 - Devolutivas e recompensas entre blocos do quiz, com badges/checks e textos personalizados.
-- Confirmação animada antes do avanço em respostas de seleção única.
+- Respostas de seleção única avançam direto para a próxima etapa, sem pop-up repetitivo de confirmação.
 - Fome, sono, água e atividade no cotidiano em escolhas visuais.
 - Imagens das telas informativas e de recompensa exibidas em proporção integral, sem `crop`/altura fixa.
 - Etapa atual e respostas preservadas ao atualizar a mesma sessão.

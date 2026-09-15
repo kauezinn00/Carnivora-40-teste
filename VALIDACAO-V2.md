@@ -27,3 +27,7 @@ Validações executadas antes de gerar o ZIP final:
 O recebimento real dos eventos pelo Meta Pixel só pode ser confirmado em produção/teste publicado. Depois de subir esta V2 em uma URL separada, use **Gerenciador de Eventos → Testar eventos** e percorra o quiz uma vez do início ao fim.
 
 Antes de substituir o funil atual, confira também a URL de teste manualmente em um celular real, principalmente as etapas longas de múltipla escolha e o clique final para o checkout.
+
+## Ajuste final
+- Resultado restaurado para a apresentação direta de 4 semanas.
+- Pop-ups repetitivos de confirmação de resposta removidos.

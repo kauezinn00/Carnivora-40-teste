@@ -1,26 +1,14 @@
 # Ajustes desta versão
 
-Solicitados após a revisão manual da V2:
-
-- removido o card superior de fase (Perfil / Meta / Rotina / Plano e contador de perguntas);
-- mantida somente a barra de progresso já existente;
-- mantidos os badges/checks de recompensa, devolutivas personalizadas e confirmações animadas;
-- mantidas as escolhas visuais de fome, sono, água e rotina;
-- corrigidas as imagens das telas informativas/recompensas para aparecerem inteiras, na largura disponível e respeitando a proporção original;
-- nenhum som foi adicionado às confirmações;
-- persistência ao atualizar continua ativa;
-- rastreamento V2, UTMs, checkout e página de vendas não foram alterados.
-
-
-## Ajuste de prazo personalizado (2026-09-14)
-- Removida a promessa fixa de "4 semanas" para atingir qualquer meta de peso.
-- A tela de resultado agora calcula uma faixa de planejamento a partir da diferença entre peso atual e peso desejado.
-- Metas muito grandes são apresentadas como "meta de longo prazo" e divididas em ciclos de 4 semanas, sem prometer conclusão rápida.
-- O gráfico de 4 semanas passou a representar o primeiro ciclo, e não a promessa de atingir o peso-alvo em 4 semanas.
-- As notificações visuais de conclusão foram mantidas sem alteração nesta versão.
-## Ajustes adicionais
-- A tela de resultado deixou de exibir faixas longas como “12 a 24 semanas” para atingir a meta.
-- O resultado agora fala em **primeiro ciclo de 4 semanas** e em progresso por etapas, sem prometer que todo o peso será perdido nesse período.
-- Metas pequenas mostram “primeiros resultados nas primeiras semanas”; metas maiores são apresentadas em etapas.
-- A imagem da etapa **“Mais de 100 receitas deliciosas”** foi substituída pela imagem enviada pelo usuário, inteira e sem crop.
-- O comportamento de recarregar a página continua preservando a etapa atual e as respostas na mesma aba.
+- 34 etapas mantidas.
+- Barra de progresso simples mantida; cards superiores de fase/contador continuam removidos.
+- Interações visuais de fome, sono, água e rotina mantidas.
+- Etapa de alimentos e proteínas continua unificada.
+- Cards/recompensas intermediários continuam mantidos.
+- Imagens informativas e de recompensa permanecem inteiras, sem crop forçado.
+- A imagem de “Mais de 100 receitas deliciosas” continua usando a imagem enviada pelo usuário.
+- O resultado voltou ao formato direto: **“Você chegará ao seu objetivo em 4 semanas.”**
+- Foram removidos os pop-ups de “Resposta registrada” após respostas de seleção única.
+- O refresh continua preservando etapa e respostas da sessão.
+- Pixel, UTMs, checkout e página de oferta preservados.
+- Nenhum evento `Purchase` foi adicionado.
