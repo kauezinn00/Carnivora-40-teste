@@ -5,10 +5,11 @@ Validações executadas antes de gerar o ZIP final:
 - `app.js` validado com `node --check` sem erro de sintaxe.
 - 34 etapas encontradas e conferidas na ordem documentada em `RASTREAMENTO.md`.
 - Versão do funil confirmada como `34_steps_v2`.
-- Quatro fases confirmadas: Perfil, Meta, Rotina e Plano.
+- Cards visuais de fase removidos; somente a barra de progresso global permanece no topo.
 - Ingredientes e proteínas confirmados em uma única etapa.
 - Telas de fome, sono, água e atividade cotidiana confirmadas com layout visual.
 - Recompensas confirmadas nas etapas 05, 09, 22, 25 e 32.
+- Imagens das telas informativas/recompensas ajustadas para `width: 100%`, `height: auto` e sem altura máxima fixa, preservando a proporção original e evitando recorte.
 - Persistência da etapa atual e das respostas validada na mesma sessão.
 - Troca de versão (`35_steps_v1` → `34_steps_v2`) validada para iniciar uma jornada limpa.
 - Voltar e avançar novamente validado sem duplicar os eventos de etapa já enviados na mesma sessão.
@@ -18,8 +19,7 @@ Validações executadas antes de gerar o ZIP final:
 - Parâmetros de evento de etapa limitados a dados operacionais (`funnel_version`, `step_number`, `steps_total`, `elapsed_seconds` e, quando aplicável, `ad_id`).
 - UTMs, `fbclid` e `src` preservados e repassados ao checkout.
 - Checkout mantido em `https://pay.wiapy.com/KX2LK3vXNU`.
-- Conferência automatizada de layout executada nas 34 etapas em viewport mobile 390×844, sem overflow horizontal.
-- Smoke test de desktop executado em 1366×900.
+- A V2-base já havia passado por conferência automatizada das 34 etapas em mobile 390×844 e smoke test desktop 1366×900. Nesta revisão, as alterações foram limitadas à remoção do card de fase e ao CSS das imagens informativas/recompensas.
 - 41 arquivos de imagem reais do projeto foram abertos e validados, sem assets corrompidos.
 
 ## O que ainda precisa ser conferido depois do deploy de teste

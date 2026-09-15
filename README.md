@@ -7,10 +7,11 @@ Versão de teste separada do funil atual. O projeto continua estático, mobile-f
 - Primeira tela preservada, com a chamada: **“Responda e receba seu plano carnívoro personalizado em apenas 2 minutos”**.
 - Quiz reduzido de 35 para 34 telas.
 - Ingredientes e proteínas unidos em uma única etapa.
-- Quatro fases visuais: **Perfil, Meta, Rotina e Plano**.
-- Devolutivas e recompensas entre blocos do quiz.
+- Barra de progresso simples mantida como único indicador global de avanço; os cards de fase foram removidos para não reforçar a sensação de quiz longo.
+- Devolutivas e recompensas entre blocos do quiz, com badges/checks e textos personalizados.
 - Confirmação animada antes do avanço em respostas de seleção única.
 - Fome, sono, água e atividade no cotidiano em escolhas visuais.
+- Imagens das telas informativas e de recompensa exibidas em proporção integral, sem `crop`/altura fixa.
 - Etapa atual e respostas preservadas ao atualizar a mesma sessão.
 - Nova versão de rastreamento: `34_steps_v2`.
 - Eventos `QuizV2Step01Viewed/Completed` até `QuizV2Step34Viewed/Completed`.

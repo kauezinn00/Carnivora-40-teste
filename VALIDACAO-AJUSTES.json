@@ -1,0 +1,15 @@
+{
+  "steps_34": true,
+  "phase_card_removed": true,
+  "progress_remains": true,
+  "no_purchase_event": true,
+  "v2_viewed_event": true,
+  "v2_completed_event": true,
+  "full_image_css": true,
+  "reward_full_image_css": true,
+  "persistence_present": true,
+  "checkout_preserved": true,
+  "assets_unchanged": true,
+  "images_decodable": true,
+  "image_count": 41
+}

@@ -90,13 +90,6 @@
     {id:"building",type:"loading",title:"Criando seu plano personalizado",body:"Preparando uma sequência com base nas respostas fornecidas...",testimonials:true,testimonialStart:7}
   ];
 
-  const PHASES=[
-    {name:"Perfil",icon:"👤",start:0,end:8},
-    {name:"Meta",icon:"🎯",start:9,end:14},
-    {name:"Rotina",icon:"🧩",start:15,end:24},
-    {name:"Plano",icon:"🥩",start:25,end:33}
-  ];
-
   let versionChanged=false;
   try{
     const previousVersion=sessionStorage.getItem(STORAGE_VERSION_KEY);
@@ -141,12 +134,7 @@
   const asset=(slot,label="Imagem")=>assetPath(slot)?`<img class="step-image" src="${esc(assetPath(slot))}" alt="${esc(label)}" decoding="async">`:`<div class="asset-slot" data-asset-slot="${esc(slot)}"><span>${esc(label)}</span></div>`;
   const logo=()=>ASSETS.logo?`<div class="brand-lockup"><img class="brand-image" src="${esc(ASSETS.logo)}" alt="${esc(CONFIG.brand)}" width="768" height="512" decoding="async"></div>`:`<div class="brand-word">${esc(CONFIG.brand)}</div>`;
 
-  function phaseFor(index){return PHASES.findIndex(p=>index>=p.start&&index<=p.end)}
-  function phaseHeader(){
-    const index=Math.max(0,phaseFor(state.current)),phase=PHASES[index];
-    return `<div class="phase-header"><div class="phase-copy"><span class="phase-icon" aria-hidden="true">${phase.icon}</span><strong>Fase ${index+1}: ${phase.name}</strong><small>${state.current+1}/${steps.length}</small></div><div class="phase-segments" aria-label="Fase ${index+1} de 4">${PHASES.map((_,i)=>`<i class="${i<index?"done":i===index?"active":""}"></i>`).join("")}</div></div>`;
-  }
-  const top=()=>`<div class="top-area"><button class="back-button" id="back" aria-label="Voltar" ${state.current===0?"hidden":""}>←</button><div class="brand-area">${logo()}</div>${phaseHeader()}<div class="progress-track" aria-label="Progresso do quiz"><span style="width:${(state.current+1)/steps.length*100}%"></span></div></div>`;
+  const top=()=>`<div class="top-area"><button class="back-button" id="back" aria-label="Voltar" ${state.current===0?"hidden":""}>←</button><div class="brand-area">${logo()}</div><div class="progress-track" aria-label="Progresso do quiz"><span style="width:${(state.current+1)/steps.length*100}%"></span></div></div>`;
 
   const option=(x,i,selected,image,icon,visual=false,visualStyle="")=>`<button class="answer ${selected?"selected":""} ${image?"image-answer":""} ${icon&&x.image?"icon-answer":""} ${x.emoji?"emoji-answer":""} ${visual?"visual-answer":""} ${visualStyle==="level"?"visual-level":""} ${visualStyle==="water"?"visual-water":""}" data-option="${i}" aria-pressed="${selected}">${image?`<div class="answer-image">${asset(x.image,"")}</div>`:icon&&x.image?`<span class="mini-picture">${asset(x.image,"")}</span>`:x.emoji?`<span class="answer-emoji" aria-hidden="true">${esc(x.emoji)}</span>`:""}<span class="answer-label">${esc(x.label)}</span><span class="answer-check">✓</span></button>`;
   const testimonials=(amount=2,start=1,selection=[])=>`<section class="testimonial-area"><h2>O que as pessoas dizem:</h2><div class="testimonial-grid">${Array.from({length:amount},(_,i)=>{const number=selection[i]??(start+i),path=ASSETS.comments[number-1];return `<article class="testimonial-slot"><img src="${esc(path)}" alt="Comentário ${number} sobre a experiência com o plano Carnívora 40+" width="720" height="480" loading="lazy" decoding="async"></article>`}).join("")}</div></section>`;
