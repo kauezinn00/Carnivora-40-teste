@@ -127,6 +127,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 .result-promise{text-align:center;color:var(--muted);font-size:18px;line-height:1.35}
 .result-promise span,.result-promise strong{display:block}
 .result-promise strong{margin-top:3px;color:var(--ink);font-size:25px}
+.result-promise small{display:block;max-width:390px;margin:8px auto 0;color:var(--muted);font-size:13px;line-height:1.45}
 .result-chart{width:100%;overflow:hidden;border-radius:16px;background:#fff}
 .result-chart svg{display:block;width:100%;height:auto}
 .chart-grid line{stroke:#b8bec7;stroke-width:1.5;stroke-dasharray:5 6}
