@@ -4,7 +4,11 @@ Quiz mobile-first estático com 35 telas, preparado para publicação na Vercel.
 
 A captura de e-mail foi removida. Depois que a última tela de carregamento chega a 100%, o botão leva diretamente para a página de vendas.
 
-As 12 imagens de comentários autorizadas estão integradas em ordem nas quatro etapas de prova social e na página final da oferta.
+Os comentários 1 a 8 aparecem nas quatro etapas de prova social do quiz. Na seção adicional da página de vendas aparecem somente os comentários 11 e 12, nos dois gêneros. As histórias dos comentários 9 e 10 já são utilizadas pelos depoimentos em destaque feminino e masculino, que foram preservados. Os arquivos permanecem incluídos no pacote, mas não são repetidos na seção adicional.
+
+Os comentários são exibidos com recorte visual até as bordas do card, definido por `COMMENT_CROPS` e `commentImage()` em `app.js` e `.comment-crop` em `styles.css`. Esse recorte preserva os arquivos originais, as fotos e os textos; elimina apenas a área vazia na exibição do funil. Não volte a fixar proporção 3:2 nesses cards.
+
+Os retratos de gênero, idade e objetivo preenchem toda a área de imagem das opções com `object-fit: cover`, sem deformação nem faixas vazias. As imagens informativas, de alimentos e de refeições mantêm a proporção original, com altura automática e sem limite de 300 px.
 
 A logo Carnívora 40+ e as 16 imagens das opções estão incluídas. As etapas de idade e objetivo escolhem as fotos conforme a resposta Mulher/Homem da primeira etapa, inclusive ao voltar e mudar essa resposta. A opção existente “Outro objetivo” foi preservada sem fotografia.
 
