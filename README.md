@@ -1,49 +1,58 @@
-# Carnívora 40+ — quiz
+# Carnívora 40+ — páginas de upsell e downsell
 
-Quiz mobile-first estático com 35 telas, preparado para publicação na Vercel.
+Pacote independente de páginas estáticas em HTML, CSS e JavaScript. Não altera o quiz existente.
+Entrada: index.html (mesmo conteúdo de upsell-1.html).
 
-A captura de e-mail foi removida. Depois que a última tela de carregamento chega a 100%, o botão leva diretamente para a página de vendas.
+## Estado da entrega
 
-Os comentários 1 a 8 aparecem nas quatro etapas de prova social do quiz. Na seção adicional da página de vendas aparecem somente os comentários 11 e 12, nos dois gêneros. As histórias dos comentários 9 e 10 já são utilizadas pelos depoimentos em destaque feminino e masculino, que foram preservados. Os arquivos permanecem incluídos no pacote, mas não são repetidos na seção adicional.
+As seis páginas têm texto, layout responsivo e navegação de recusa implementados.
+A cobrança NÃO está conectada. Clicar no botão de aceitar mostra um aviso e não cobra nem avança.
+Não há Pixel, evento Purchase, rastreamento externo, cronômetro ou cadastro de dados pessoais.
 
-Os comentários são exibidos com recorte visual até as bordas do card, definido por `COMMENT_CROPS` e `commentImage()` em `app.js` e `.comment-crop` em `styles.css`. Esse recorte preserva os arquivos originais, as fotos e os textos; elimina apenas a área vazia na exibição do funil. Não volte a fixar proporção 3:2 nesses cards.
+Os nomes, formatos e conteúdos dos produtos são uma proposta comercial. Este ZIP contém as páginas de venda, NÃO as aulas, PDFs ou a área de membros. Antes de vender, produza e confira os materiais descritos, cadastre os produtos na plataforma e conecte a entrega.
 
-Os retratos de gênero, idade e objetivo preenchem toda a área de imagem das opções com `object-fit: cover`, sem deformação nem faixas vazias. As imagens informativas, de alimentos e de refeições mantêm a proporção original, com altura automática e sem limite de 300 px.
+## Ofertas e caminhos
 
-A logo Carnívora 40+ e as 16 imagens das opções estão incluídas. As etapas de idade e objetivo escolhem as fotos conforme a resposta Mulher/Homem da primeira etapa, inclusive ao voltar e mudar essa resposta. A opção existente “Outro objetivo” foi preservada sem fotografia.
+| Página | Oferta | Preço | Após pagamento aprovado | Ao recusar |
+|---|---|---:|---|---|
+| upsell-1.html | Firmeza 40+ | R$17 | upsell-2.html | downsell-1.html |
+| downsell-1.html | Firmeza Essencial | R$9,90 | upsell-2.html | upsell-2.html |
+| upsell-2.html | Revisão de Rota | R$27 | upsell-3.html | downsell-2.html |
+| downsell-2.html | Revisão Essencial | R$17 | upsell-3.html | upsell-3.html |
+| upsell-3.html | Manutenção 40+ | R$47 | acesso.html | downsell-3.html |
+| downsell-3.html | Manutenção Essencial | R$27 | acesso.html | acesso.html |
 
-As imagens recebidas foram otimizadas em WebP, sem alterar seu conteúdo, para reduzir o carregamento. As opções ficam em `assets/options`, os comentários em `assets/comments` e a logo em `assets/logo-carnivora-40.webp`. O mapeamento está no objeto `ASSETS` em `app.js`.
+Os downsells têm menos conteúdo que as versões completas. Não são cobranças recorrentes.
+A compra de um complemento é opcional. Sair ou recusar não é apresentado como cancelamento da compra principal.
+O link "Pular todas as ofertas" leva diretamente a acesso.html.
 
-A etapa “Mais de 100 receitas deliciosas” utiliza a imagem local `assets/mais-de-100-receitas.jpeg`. A barra de progresso do quiz possui acabamento totalmente arredondado.
+## O que editar
 
-A confirmação da meta utiliza `assets/meta-peso.webp` e mostra um cartão dinâmico com o peso atual e o peso desejado do lead. A etapa de organização do plano utiliza `assets/plano-refeicoes.webp`.
+- Textos e conteúdo: cada arquivo HTML.
+- Cor, espaçamento, tipografia e responsividade: assets/styles.css.
+- Preços e caminhos entre ofertas: assets/config.js. Mantenha também o preço estático no HTML consistente; o preço cobrado deve ser conferido na plataforma.
+- Destino da área de membros: accessUrl em assets/config.js.
+- Scripts oficiais: integracao/upsell-1.js até integracao/downsell-3.js, ou o ponto comentado no HTML se vierem com tags <script>.
+- Navegação e preservação de UTMs: assets/funnel.js.
+- Configuração de hospedagem: vercel.json.
 
-A etapa sobre inchaço no rosto mostra somente a arte correspondente ao gênero selecionado, seguida do botão para continuar.
+index.html e upsell-1.html são cópias da entrada. Ao mudar texto ou inserir script diretamente no HTML da primeira oferta, atualize ambos. O arquivo integracao/upsell-1.js é compartilhado pelas duas entradas.
 
-Na página final, a comparação visual “Agora/Meta” correspondente ao gênero selecionado aparece imediatamente acima do indicador de porcentagens.
+## Publicação posterior
 
-A lista principal da oferta mostra até seis prioridades personalizadas a partir das respostas do lead. A meta de peso aparece obrigatoriamente em primeiro lugar; as demais são selecionadas por relevância entre histórico de peso, tempo longe da meta, fome, hábitos alimentares, sono, água, atividade, restrições alimentares, tamanho de roupa e objetivo adicional.
+1. Extraia este ZIP para uma pasta.
+2. Mantenha index.html, assets/, integracao/ e os demais HTML na mesma raiz.
+3. Publique essa pasta como um projeto estático na Vercel. Não precisa de npm, framework, instalação de dependências ou etapa de compilação.
+4. Use uma publicação de teste antes de direcionar compradores.
+5. Configure as URLs absolutas de cada oferta na plataforma, conforme o fluxo acima.
+6. Após integrar, faça o teste de pagamento no ambiente de teste da plataforma, incluindo recusa, erro e recarregamento.
 
-Mais abaixo na oferta, a prova social de antes/depois também acompanha o gênero selecionado. A seção final de garantia utiliza o selo de 30 dias enviado.
+Não existe publicação ativa criada por este pacote. Um ZIP precisa ser extraído antes de enviar os arquivos pelo método de implantação escolhido.
 
-As telas de cálculo animam o círculo, a barra e a porcentagem de 0% a 100% antes de liberar o avanço. As duas telas de resultado exibem um gráfico animado com estimativa fixa de quatro semanas.
+## O que enviar para concluir a integração
 
-O checkout já está conectado a `https://pay.wiapy.com/KX2LK3vXNU`.
+Envie o nome da plataforma, os scripts oficiais de cada oferta, o mapeamento dos produtos/valores e o link de acesso.
+Não envie senhas ou chaves privadas. Os scripts públicos de checkout serão instalados após verificar como a plataforma trata pagamento, recusa e sessão do pedido.
 
-O Meta Pixel `1253168553664712` está instalado globalmente com `PageView`, `QuizStarted`, `QuizCompleted`, `ViewContent` e `InitiateCheckout`. O script global da UTMify fornecido pelo cliente também está instalado e carrega `https://cdn.utmify.com.br/scripts/utms/latest.js`.
+Veja INTEGRACAO.md para os detalhes técnicos.
 
-O Pixel também registra entrada e avanço nas 35 telas: `QuizStep01Viewed` / `QuizStep01Completed` até `QuizStep35Viewed` / `QuizStep35Completed`. Cada evento conta uma vez por sessão da aba, incluindo retornos, múltiplas seleções e recarregamentos. São contagens agregadas para analisar perdas por etapa, sem enviar nome, respostas, medidas ou informações de saúde. O mapa das etapas e as instruções de análise estão em [RASTREAMENTO.md](RASTREAMENTO.md).
-
-## Configuração
-
-Edite o objeto `CONFIG` no início de `app.js` para alterar checkout, preço, marca, duração do cronômetro (`offerMinutes`) e futuros códigos de rastreamento.
-
-Os seletores de altura e peso possuem uma fita métrica móvel sob um marcador vermelho fixo no centro, além da orientação animada para arrastar. O cronômetro da oferta é compartilhado por todas as aparições da página e não reinicia ao atualizar a mesma sessão.
-
-Todos os parâmetros UTM e `fbclid` recebidos na entrada são mantidos durante o quiz e anexados ao checkout.
-
-## Publicação na Vercel
-
-Para atualizar o repositório existente, envie os arquivos extraídos do ZIP, incluindo a pasta `assets`, para a mesma raiz onde já está `index.html`. Não envie apenas o arquivo ZIP e não apague o projeto na Vercel. Se você modificou preço, checkout ou rastreamento diretamente no GitHub desde a última entrega, preserve essas configurações ao substituir `app.js`.
-
-O projeto não exige comando de build nem diretório de saída. Na importação do repositório, mantenha o framework como `Other` e deixe `Build Command` e `Output Directory` vazios.
