@@ -29,7 +29,7 @@ window.OFFER_CONFIG = {
   },
   "upsell-3": {
     "name": "Manutenção 40+",
-    "price": 47,
+    "price": 37,
     "next": "acesso.html",
     "decline": "downsell-3.html"
   },
@@ -41,4 +41,3 @@ window.OFFER_CONFIG = {
   }
 }
 };
-

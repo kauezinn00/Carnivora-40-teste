@@ -19,7 +19,7 @@ Os nomes, formatos e conteúdos dos produtos são uma proposta comercial. Este Z
 | downsell-1.html | Firmeza Essencial | R$9,90 | upsell-2.html | upsell-2.html |
 | upsell-2.html | Revisão de Rota | R$27 | upsell-3.html | downsell-2.html |
 | downsell-2.html | Revisão Essencial | R$17 | upsell-3.html | upsell-3.html |
-| upsell-3.html | Manutenção 40+ | R$47 | acesso.html | downsell-3.html |
+| upsell-3.html | Manutenção 40+ | R$37 | acesso.html | downsell-3.html |
 | downsell-3.html | Manutenção Essencial | R$27 | acesso.html | acesso.html |
 
 Os downsells têm menos conteúdo que as versões completas. Não são cobranças recorrentes.
@@ -29,7 +29,7 @@ O link "Pular todas as ofertas" leva diretamente a acesso.html.
 ## O que editar
 
 - Textos e conteúdo: cada arquivo HTML.
-- Cor, espaçamento, tipografia e responsividade: assets/styles.css.
+- Visual dos upsells: assets/upsells-dark.css. Visual dos downsells e acesso: assets/styles.css.
 - Preços e caminhos entre ofertas: assets/config.js. Mantenha também o preço estático no HTML consistente; o preço cobrado deve ser conferido na plataforma.
 - Destino da área de membros: accessUrl em assets/config.js.
 - Scripts oficiais: integracao/upsell-1.js até integracao/downsell-3.js, ou o ponto comentado no HTML se vierem com tags <script>.
@@ -56,3 +56,6 @@ Não envie senhas ou chaves privadas. Os scripts públicos de checkout serão in
 
 Veja INTEGRACAO.md para os detalhes técnicos.
 
+
+## Revisão visual — 24/09/2026
+Os três upsells foram refeitos com fundo preto, vermelho, blocos de benefícios e módulos, seguindo a referência enviada. Preços: R$17, R$27 e R$37. Os downsells permanecem na versão anterior (R$9,90, R$17 e R$27). Scripts de pagamento e link de acesso continuam pendentes.

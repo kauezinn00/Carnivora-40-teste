@@ -25,3 +25,6 @@ Data: 23/09/2026.
 HTML/CSS/JS estáticos: não há etapa de compilação.
 Antes de direcionar compradores, conferir visualmente no celular e concluir os testes de integração descritos em INTEGRACAO.md.
 
+
+## Revisão de 24/09/2026
+Conferidos novamente os links e recursos locais, sintaxe JavaScript, IDs únicos, três módulos em cada upsell, igualdade da entrada com upsell-1 e preços R$17/R$27/R$37. Confirmado que downsells, acesso e lógica de integração não foram alterados. A validação visual em navegador continua pendente; o bloqueio registrado acima não foi contornado.
