@@ -110,21 +110,20 @@
   // Recorte visual hasta el borde de cada tarjeta.
   // Cada entrada contiene: ancho original, alto original, x, y, ancho y alto del recorte.
   const COMMENT_CROPS={
-    // Recortes mais conservadores para preservar avatar, nome e @ completos.
-    "comentario_1.webp":[720,480,2,90,715,329],
-    "comentario_2.webp":[720,480,0,65,720,373],
-    "comentario_3.webp":[720,480,0,62,720,372],
-    "comentario_4.webp":[720,480,0,61,720,369],
-    "comentario_5.webp":[720,480,0,63,720,359],
-    "comentario_6.webp":[720,480,3,72,715,358],
-    "comentario_7.webp":[720,480,3,78,715,326],
-    "comentario_8.webp":[720,480,2,94,715,297],
-    "comentario_9.webp":[1200,800,4,129,1190,573],
-    "comentario_10.webp":[1200,800,0,130,1200,556],
-    "comentario_11.webp":[720,480,6,90,708,328],
-    "comentario_12.webp":[720,480,2,71,715,347],
-    "social-proof-comment-mulher.jpeg":[1536,691,8,0,1520,691],
-    "social-proof-comment-homem.jpeg":[1536,691,8,0,1520,691]
+    "comentario_1.webp":[720,480,16,84,688,319],
+    "comentario_2.webp":[720,480,15,85,690,329],
+    "comentario_3.webp":[720,480,15,75,690,339],
+    "comentario_4.webp":[720,480,16,77,688,334],
+    "comentario_5.webp":[720,480,13,75,694,332],
+    "comentario_6.webp":[720,480,15,84,690,330],
+    "comentario_7.webp":[720,480,18,93,684,297],
+    "comentario_8.webp":[720,480,15,106,690,272],
+    "comentario_9.webp":[1200,800,26,140,1148,548],
+    "comentario_10.webp":[1200,800,26,153,1148,504],
+    "comentario_11.webp":[720,480,16,84,688,319],
+    "comentario_12.webp":[720,480,16,83,688,319],
+    "social-proof-comment-mulher.jpeg":[1536,691,28,14,1480,662],
+    "social-proof-comment-homem.jpeg":[1536,691,29,20,1478,650]
   };
   // Cuestionario: 1–6, 12 y 8. Oferta: 11 y 7; 9 y 10 son los destacados de mujer y hombre.
   const OFFER_COMMENT_NUMBERS=[11,7];
