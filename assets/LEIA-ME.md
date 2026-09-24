@@ -1,22 +1,13 @@
-# Imagens do quiz
+# Archivos visuales
 
-Os espaços visuais já estão posicionados no layout. Quando os arquivos autorizados forem enviados, eles serão organizados nestes campos de `app.js`:
+Esta carpeta contiene todos los recursos locales del cuestionario y de la oferta. No hay imágenes enlazadas desde el dominio de referencia.
 
-- `logo`: preenchido com a logo Carnívora 40+
-- `genderWoman` e `genderMan`: preenchidos com as duas imagens da etapa 1
-- `age18`, `age27`, `age39` e `age50`: preenchidos, cada um com versões Mulher e Homem
-- `goalAppearance`, `goalHealth` e `goalBoth`: preenchidos, cada um com versões Mulher e Homem
-- `macroInfo` e `difference` já estão preenchidos com as imagens enviadas
-- `goal` e `foodInfo`
-- `mealPlan`, `faceChange` e `visibleChange`
-- `guarantee`
+- `options/`: retratos de género, edad y objetivo, con versiones para mujer y hombre.
+- `comments/`: comentarios adaptados al español neutro, conservando cada persona, nombre e historia.
+- `dieta-carnivora-80-20.jpeg` y `dieta-carnivora-diferente.jpeg`: pantallas educativas.
+- `inchaco-rosto-homem.webp` y `inchaco-rosto-mulher.webp`: pantalla visual según el género seleccionado.
+- `resultado-agora-meta-homem.webp` y `resultado-agora-meta-mulher.webp`: comparación “Ahora/Objetivo” en la oferta.
+- `social-proof-*`: prueba social específica para cada recorrido.
+- `garantia-30-dias.webp`: sello de garantía en español.
 
-Os 12 comentários autorizados estão preenchidos em `comments/`, numerados de `comentario_1.webp` a `comentario_12.webp`.
-
-A etapa sobre inchaço no rosto usa `inchaco-rosto-homem.webp` ou `inchaco-rosto-mulher.webp` conforme o gênero escolhido e não repete o texto fora da imagem.
-
-A página final usa `resultado-agora-meta-homem.webp` ou `resultado-agora-meta-mulher.webp` acima do bloco de porcentagens.
-
-A prova social da oferta usa `antes-depois-homem.webp` ou `antes-depois-mulher.webp`. A seção de garantia usa `garantia-30-dias.webp`.
-
-Os nomes dos arquivos em `options/` seguem o ZIP enviado. São 16 imagens otimizadas em WebP: 2 de gênero, 8 de idade e 6 de objetivos. As duas imagens educativas JPEG da versão anterior foram mantidas.
+Las rutas originales se conservaron para no romper las referencias existentes del JavaScript.

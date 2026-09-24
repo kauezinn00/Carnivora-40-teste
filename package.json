@@ -1,0 +1,10 @@
+{
+  "name": "plan-carnivoro-40-internacional",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node server.js",
+    "build": "node scripts/validate.js",
+    "test": "node scripts/validate.js && node scripts/test-pricing.js"
+  }
+}
