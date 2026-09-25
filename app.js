@@ -16,7 +16,7 @@
     goalAppearance:{Mujer:"/assets/options/etapa_03_objetivo_mulher_ficar_mais_bonita_e_me_sentir_bem.webp",Hombre:"/assets/options/etapa_03_objetivo_homem_ficar_mais_bonito_e_me_sentir_bem.webp"},
     goalHealth:{Mujer:"/assets/options/etapa_03_objetivo_mulher_melhorar_minha_saude.webp",Hombre:"/assets/options/etapa_03_objetivo_homem_melhorar_minha_saude.webp"},
     goalBoth:{Mujer:"/assets/options/etapa_03_objetivo_mulher_ambos.webp",Hombre:"/assets/options/etapa_03_objetivo_homem_ambos.webp"},
-    comments:[1,2,3,4,5,6,7,8,9,10,11,12].map(i=>`/assets/comments/comentario_${i}.webp`),
+    comments:[1,2,3,4,5,6,7,8,9,10].map(i=>`/assets/comments/comentario_${i}.webp`),
     macroInfo:"assets/dieta-carnivora-80-20.jpeg",difference:"assets/dieta-carnivora-diferente.jpeg",goal:"/assets/meta-peso.webp",foodInfo:"/assets/mais-de-100-receitas.jpeg",mealPlan:"/assets/plano-refeicoes.webp",faceChange:{Mujer:"/assets/inchaco-rosto-mulher.webp",Hombre:"/assets/inchaco-rosto-homem.webp"},offerEvolution:{Mujer:"/assets/resultado-agora-meta-mulher.webp",Hombre:"/assets/resultado-agora-meta-homem.webp"},visibleChange:{Mujer:"/assets/antes-depois-mulher.webp",Hombre:"/assets/antes-depois-homem.webp"},socialProofPhoto:{Mujer:"/assets/social-proof-photo-mulher.jpeg",Hombre:"/assets/social-proof-photo-homem.webp"},socialProofComment:{Mujer:"/assets/social-proof-comment-mulher.jpeg",Hombre:"/assets/social-proof-comment-homem.jpeg"},guarantee:"/assets/garantia-30-dias.webp"
   };
   const KEYS=["utm_source","utm_medium","utm_campaign","utm_content","utm_term","fbclid","src"],params=new URLSearchParams(location.search),tracking=JSON.parse(sessionStorage.getItem("carnifit_tracking")||"{}");
@@ -94,7 +94,7 @@
     {id:"secondaryGoal",type:"multi",title:"Además de tu peso, ¿qué más te gustaría mejorar?",options:[c("Poder correr 5 km"),c("Sentirme mejor al mirarme al espejo"),c("Tener más salud y energía"),c("Dormir mejor"),c("Prepararme para un evento"),c("Sentirme bien con mi cuerpo"),c("Llevar una vida más activa"),c("Todavía no lo he pensado")]},
     {id:"faceChange",type:"info",image:"faceChange",imageOnly:true,title:"Bajar de peso no solo se nota en el cuerpo",body:""},
     {id:"motivation",type:"result",title:"¡Con motivación y constancia, puedes alcanzar tu objetivo antes de lo que imaginas!",body:"Alcanzarás tu objetivo en 4 semanas.",testimonials:true,testimonialStart:5},
-    {id:"building",type:"loading",title:"Creando tu plan personalizado",body:"Preparando una propuesta a partir de tus respuestas...",testimonials:true,testimonialStart:7,testimonialSelection:[12,8]}
+    {id:"building",type:"loading",title:"Creando tu plan personalizado",body:"Preparando una propuesta a partir de tus respuestas...",testimonials:true,testimonialStart:7,testimonialSelection:[7,8]}
   ];
   sessionStorage.setItem("carnifit_step","0");
   sessionStorage.setItem("carnifit_answers","{}");
@@ -125,11 +125,17 @@
     "social-proof-comment-mulher.jpeg":[1536,691,28,14,1480,662],
     "social-proof-comment-homem.jpeg":[1536,691,29,20,1478,650]
   };
-  // Cuestionario: 1–6, 12 y 8. Oferta: 11 y 7; 9 y 10 son los destacados de mujer y hombre.
-  const OFFER_COMMENT_NUMBERS=[11,7];
+  // Cuestionario: comentarios 1–8. Oferta: comentarios 9–10. Todos corresponden exactamente a las imágenes finales suministradas por el usuario.
+  const OFFER_COMMENT_NUMBERS=[9,10];
   function commentImage(path,label){
     if(!path)return `<div class="asset-slot"><span>${esc(label)}</span></div>`;
-    const crop=COMMENT_CROPS[path.split("/").pop()];
+    const fileName=path.split("/").pop();
+    // Los comentarios corregidos ya incluyen todo el card (foto, nombre, @ y texto).
+    // No aplicar recorte adicional, porque en móvil terminaba cortando avatar y usuario.
+    if(/^comentario_\d+\.webp$/i.test(fileName)){
+      return `<img class="comment-full" src="${esc(path)}" alt="${esc(label)}" loading="lazy" decoding="async">`;
+    }
+    const crop=COMMENT_CROPS[fileName];
     if(!crop)return `<img src="${esc(path)}" alt="${esc(label)}" loading="lazy" decoding="async">`;
     const [originalWidth,originalHeight,x,y,width,height]=crop;
     const style=`aspect-ratio:${width}/${height};--comment-width:${originalWidth/width*100}%;--comment-height:${originalHeight/height*100}%;--comment-left:${-x/width*100}%;--comment-top:${-y/height*100}%`;

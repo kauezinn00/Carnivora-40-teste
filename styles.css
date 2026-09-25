@@ -287,3 +287,6 @@ button,a{-webkit-tap-highlight-color:transparent}
 }
 .price-local-note{margin:8px 0 4px;text-align:center;color:#6b7280;font-size:12px;line-height:1.35}
 .price-row strong{white-space:nowrap;font-size:clamp(27px,8vw,36px)}
+
+/* Comentarios traducidos: mostrar la tarjeta completa, sin recorte adicional. */
+.testimonial-slot .comment-full{display:block;width:100%;height:auto;object-fit:contain;object-position:center;border-radius:0;background:#fff}
