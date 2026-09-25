@@ -6,7 +6,7 @@
   "use strict";
   return Object.freeze({
     BASE_PRICE_USD: 9.97,
-    CHECKOUT_URL: "https://pay.wiapy.com/KX2LK3vXNU",
+    CHECKOUT_URL: "https://pay.hotmart.com/W107759593D?checkoutMode=10",
     CHECKOUT_PRICE_ENDPOINT: "",
     PRICE_API_URL: "/api/price",
     PRICE_CACHE_MS: 60 * 60 * 1000,
